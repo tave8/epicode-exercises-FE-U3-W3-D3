@@ -4,7 +4,7 @@ import { HeartFill as HeartFillIcon, Plus as PlusIcon } from "react-bootstrap-ic
 
 import { isCompanyInFavourites } from "../../assets/js/helpers"
 
-const AddCompanyToFavourites = ({ company, favouriteCompanies }) => {
+const AddComp = ({ company, favouriteCompanies }) => {
   const dispatch = useDispatch()
 
   return (
@@ -28,4 +28,4 @@ const AddCompanyToFavourites = ({ company, favouriteCompanies }) => {
   )
 }
 
-export default AddCompanyToFavourites
+export default AddComp

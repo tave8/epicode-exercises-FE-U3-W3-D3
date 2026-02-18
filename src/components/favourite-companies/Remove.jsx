@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { Button } from "react-bootstrap"
 import { HeartFill  as HeartFillIcon, Dash as DashIcon } from "react-bootstrap-icons"
 
-const RemoveCompanyFromFavourites = ({ company }) => {
+const RemoveComp = ({ company }) => {
   const dispatch = useDispatch()
 
   return (
@@ -21,4 +21,4 @@ const RemoveCompanyFromFavourites = ({ company }) => {
   )
 }
 
-export default RemoveCompanyFromFavourites
+export default RemoveComp

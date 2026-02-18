@@ -1,5 +1,5 @@
-import AddCompanyToFavourites from "./Add"
-import RemoveCompanyFromFavourites from "./Remove"
+import AddCompany from "./Add"
+import RemoveCompany from "./Remove"
 
 import { isCompanyInFavourites } from "../../assets/js/helpers"
 
@@ -20,7 +20,7 @@ const defaultShowOptions = {
  * }
  */
 
-const FavouriteCompanyActions = ({ company, favouriteCompanies, showOptions = {} }) => {
+const ActionsComp = ({ company, favouriteCompanies, showOptions = {} }) => {
   const finalShowOptions = { ...defaultShowOptions, ...showOptions }
   return (
     <>
@@ -28,22 +28,22 @@ const FavouriteCompanyActions = ({ company, favouriteCompanies, showOptions = {}
       {!finalShowOptions.dependsIfCompanyInFavourites && (
         <>
           {/* ADD */}
-          {finalShowOptions.add && <AddCompanyToFavourites company={company} favouriteCompanies={favouriteCompanies} />}
+          {finalShowOptions.add && <AddCompany company={company} favouriteCompanies={favouriteCompanies} />}
 
           {/* REMOVE */}
-          {finalShowOptions.remove && <RemoveCompanyFromFavourites company={company} favouriteCompanies={favouriteCompanies} />}
+          {finalShowOptions.remove && <RemoveCompany company={company} favouriteCompanies={favouriteCompanies} />}
         </>
       )}
 
       {/* if the company is in favourites: show "add to favourite", else show "remove from favourites" */}
       {finalShowOptions.dependsIfCompanyInFavourites && (
         <>
-          {isCompanyInFavourites({ favouriteCompanies })(company) && <RemoveCompanyFromFavourites company={company} favouriteCompanies={favouriteCompanies} />}
-          {!isCompanyInFavourites({ favouriteCompanies })(company) && <AddCompanyToFavourites company={company} favouriteCompanies={favouriteCompanies} />}
+          {isCompanyInFavourites({ favouriteCompanies })(company) && <RemoveCompany company={company} favouriteCompanies={favouriteCompanies} />}
+          {!isCompanyInFavourites({ favouriteCompanies })(company) && <AddCompany company={company} favouriteCompanies={favouriteCompanies} />}
         </>
       )}
     </>
   )
 }
 
-export default FavouriteCompanyActions
+export default ActionsComp
