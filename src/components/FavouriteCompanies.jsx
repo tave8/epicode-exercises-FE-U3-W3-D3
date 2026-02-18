@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Button } from "react-bootstrap"
 
 // redux stuff
-import { useSelector } from "react-redux"
-
-
+import { useDispatch, useSelector } from "react-redux"
 
 const FavouriteCompanies = () => {
   const favouriteCompanies = useSelector((state) => state.favouriteCompanies)
+  const dispatch = useDispatch()
 
   return (
     <Container className="mt-3">
@@ -26,13 +25,28 @@ const FavouriteCompanies = () => {
         {favouriteCompanies.list.length > 0 &&
           favouriteCompanies.list.map((company, i) => {
             return (
-              <Col key={`${company._id}-${i}`} xs={12} className="border p-2">
-                <p>
-                  <Link to={`/${company.company_name}`}>
-                    {company.company_name} - {company.title}
-                  </Link>
-                </p>
-              </Col>
+              <Row key={`${company._id}-${i}`} className="border p-2">
+                <Col xs={12}>
+                  <p>
+                    <Link to={`/${company.company_name}`}>
+                      {company.company_name} - {company.title}
+                    </Link>
+                  </p>
+                </Col>
+                <Col xs={12}>
+                  <Button
+                    onClick={() => {
+                      dispatch({
+                        type: "REMOVE_COMPANY_FROM_FAVOURITE_COMPANIES",
+                        payload: company,
+                      })
+                    }}
+                    variant="danger"
+                  >
+                    remove from favourites
+                  </Button>
+                </Col>
+              </Row>
             )
           })}
 
