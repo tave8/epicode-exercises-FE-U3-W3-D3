@@ -37,7 +37,7 @@ const CompanySearchResults = () => {
         <Col className="my-3">
           <h1 className="display-4">Job posting for: {params.company}</h1>
           {jobs.map((jobData) => (
-            <Job key={jobData._id} job={jobData} />
+            <Job key={jobData._id} company={jobData} />
           ))}
         </Col>
       </Row>

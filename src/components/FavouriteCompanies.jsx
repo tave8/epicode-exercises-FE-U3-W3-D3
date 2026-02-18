@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
-import { Container, Row, Col, Button } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 // redux stuff
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
+
+import FavouriteCompanyActions from "./FavouriteCompanyActions"
 
 const FavouriteCompanies = () => {
   const favouriteCompanies = useSelector((state) => state.favouriteCompanies)
-  const dispatch = useDispatch()
 
   return (
     <Container className="mt-3">
@@ -20,7 +21,7 @@ const FavouriteCompanies = () => {
           <h2>Favourite Companies</h2>
         </Col>
       </Row>
-      <Row className="mt-3 g-3">
+      <Row className="mt-3 gap-3">
         {/* exist favourite companies */}
         {favouriteCompanies.list.length > 0 &&
           favouriteCompanies.list.map((company, i) => {
@@ -34,17 +35,7 @@ const FavouriteCompanies = () => {
                   </p>
                 </Col>
                 <Col xs={12}>
-                  <Button
-                    onClick={() => {
-                      dispatch({
-                        type: "REMOVE_COMPANY_FROM_FAVOURITE_COMPANIES",
-                        payload: company,
-                      })
-                    }}
-                    variant="danger"
-                  >
-                    remove from favourites
-                  </Button>
+                  <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} />
                 </Col>
               </Row>
             )
