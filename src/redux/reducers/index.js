@@ -1,19 +1,23 @@
-
 const initialState = {
-    favouriteCompanies: {
-        list: []
-    }
+  favouriteCompanies: {
+    list: [],
+  },
 }
 
-const mainReducer = (currentState = initialState, action) => {
-    switch(action.type) {
-        case "ADD_COMPANY_TO_FAVOURITE_COMPANIES":
-            console.log(action)
-            return currentState
-        default:
-            return currentState
-    }
+const mainReducer = (currState = initialState, action) => {
+  switch (action.type) {
+    case "ADD_COMPANY_TO_FAVOURITE_COMPANIES":
+      // console.log(action)
+      return {
+        ...currState,
+        favouriteCompanies: {
+          ...currState.favouriteCompanies,
+          list: [...currState.favouriteCompanies.list, action.payload],
+        },
+      }
+    default:
+      return currState
+  }
 }
-
 
 export default mainReducer
