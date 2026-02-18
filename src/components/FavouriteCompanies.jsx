@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Container, Row, Col, Form } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 // redux stuff
 import { useSelector } from "react-redux"
@@ -17,10 +17,12 @@ const FavouriteCompanies = () => {
       <Row>
         {/* exist favourite companies */}
         {favouriteCompanies.list.length > 0 &&
-          favouriteCompanies.list.map((company) => {
+          favouriteCompanies.list.map((company, i) => {
             return (
-              <Col key={company._id}>
-                <p>{company.title}</p>
+              <Col key={`${company._id}-${i}`} xs={12}>
+                <p>
+                  <Link to={`/${company.company_name}`}>{company.company_name}</Link>
+                </p>
               </Col>
             )
           })}
