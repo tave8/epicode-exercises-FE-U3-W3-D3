@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 // redux stuff
 import { useSelector } from "react-redux"
 
-import { isCompanyInFavourites } from "../assets/js/helpers"
 import FavouriteCompanyActions from "./FavouriteCompanyActions"
 
 const Job = ({ company }) => {

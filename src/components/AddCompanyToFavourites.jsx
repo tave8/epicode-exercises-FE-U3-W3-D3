@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux"
 import { Button } from "react-bootstrap"
+import { HeartFill as HeartFillIcon, Plus as PlusIcon } from "react-bootstrap-icons"
+
 
 import { isCompanyInFavourites } from "../assets/js/helpers"
 
@@ -9,7 +11,7 @@ const AddCompanyToFavourites = ({ company, favouriteCompanies }) => {
 
   return (
     <Button
-      className="info"
+      variant="success"
       onClick={() => {
         // check again that the company is not in favourites.
         // prevents discrepancy between UI and source of truth
@@ -22,8 +24,8 @@ const AddCompanyToFavourites = ({ company, favouriteCompanies }) => {
         })
       }}
     >
-      {" "}
-      + favourite
+      <PlusIcon size={20} />
+      <HeartFillIcon />
     </Button>
   )
 }

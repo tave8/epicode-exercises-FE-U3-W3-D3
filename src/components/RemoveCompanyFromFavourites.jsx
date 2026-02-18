@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { Button } from "react-bootstrap"
-
+import { HeartFill  as HeartFillIcon, Dash as DashIcon } from "react-bootstrap-icons"
 
 const RemoveCompanyFromFavourites = ({ company }) => {
   const dispatch = useDispatch()
@@ -15,7 +15,8 @@ const RemoveCompanyFromFavourites = ({ company }) => {
       }}
       variant="danger"
     >
-      remove from favourites
+      <DashIcon size={20} />
+      <HeartFillIcon />
     </Button>
   )
 }
