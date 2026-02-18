@@ -35,7 +35,7 @@ const FavouriteCompanies = () => {
                   </p>
                 </Col>
                 <Col xs={12}>
-                  <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} />
+                  <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} showOptions={{ add: false }} />
                 </Col>
               </Row>
             )

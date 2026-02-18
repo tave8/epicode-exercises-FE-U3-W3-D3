@@ -28,7 +28,9 @@ const Job = ({ company }) => {
           {isCompanyInFavourites({ favouriteCompanies })(company) && <p>in favourites</p>}
 
           {/* not: company is in favourites */}
-          {!isCompanyInFavourites({ favouriteCompanies })(company) && <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} />}
+          {!isCompanyInFavourites({ favouriteCompanies })(company) && (
+            <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} showOptions={{}} />
+          )}
         </Col>
       </Row>
     </>
