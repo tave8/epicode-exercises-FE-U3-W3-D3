@@ -7,7 +7,6 @@ const initialState = {
 const mainReducer = (currState = initialState, action) => {
   switch (action.type) {
     case "ADD_COMPANY_TO_FAVOURITE_COMPANIES":
-      // console.log(action)
       return {
         ...currState,
         favouriteCompanies: {
