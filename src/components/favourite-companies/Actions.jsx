@@ -1,7 +1,7 @@
-import AddCompanyToFavourites from "./AddCompanyToFavourites"
-import RemoveCompanyFromFavourites from "./RemoveCompanyFromFavourites"
+import AddCompanyToFavourites from "./Add"
+import RemoveCompanyFromFavourites from "./Remove"
 
-import { isCompanyInFavourites } from "../assets/js/helpers"
+import { isCompanyInFavourites } from "../../assets/js/helpers"
 
 const defaultShowOptions = {
   add: true,

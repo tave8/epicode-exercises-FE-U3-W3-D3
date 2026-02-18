@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap"
 // redux stuff
 import { useSelector } from "react-redux"
 
-import FavouriteCompanyActions from "./FavouriteCompanyActions"
+import FavouriteCompanyActions from "./favourite-companies/Actions"
 
 const FavouriteCompanies = () => {
   const favouriteCompanies = useSelector((state) => state.favouriteCompanies)

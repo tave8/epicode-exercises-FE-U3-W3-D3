@@ -2,9 +2,7 @@ import { useDispatch } from "react-redux"
 import { Button } from "react-bootstrap"
 import { HeartFill as HeartFillIcon, Plus as PlusIcon } from "react-bootstrap-icons"
 
-
-import { isCompanyInFavourites } from "../assets/js/helpers"
-
+import { isCompanyInFavourites } from "../../assets/js/helpers"
 
 const AddCompanyToFavourites = ({ company, favouriteCompanies }) => {
   const dispatch = useDispatch()
@@ -29,6 +27,5 @@ const AddCompanyToFavourites = ({ company, favouriteCompanies }) => {
     </Button>
   )
 }
-
 
 export default AddCompanyToFavourites

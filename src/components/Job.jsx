@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 // redux stuff
 import { useSelector } from "react-redux"
 
-import FavouriteCompanyActions from "./FavouriteCompanyActions"
+import FavouriteCompanyActions from "./favourite-companies/Actions"
 
 const Job = ({ company }) => {
   const favouriteCompanies = useSelector((state) => state.favouriteCompanies)
