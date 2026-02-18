@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { Container, Row, Col, Button } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 
 import { isCompanyInFavourites } from "../assets/js/helpers"
 

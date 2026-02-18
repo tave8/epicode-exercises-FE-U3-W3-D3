@@ -1,28 +1,14 @@
-import { useDispatch } from "react-redux"
-import { Button } from "react-bootstrap"
-
 import AddCompanyToFavourites from "./AddCompanyToFavourites"
+import RemoveCompanyFromFavourites from "./RemoveCompanyFromFavourites"
 
 const FavouriteCompanyActions = ({ company, favouriteCompanies }) => {
-  const dispatch = useDispatch()
-
   return (
     <>
       {/* ADD */}
       <AddCompanyToFavourites company={company} favouriteCompanies={favouriteCompanies} />
 
       {/* REMOVE */}
-      <Button
-        onClick={() => {
-          dispatch({
-            type: "REMOVE_COMPANY_FROM_FAVOURITE_COMPANIES",
-            payload: company,
-          })
-        }}
-        variant="danger"
-      >
-        remove from favourites
-      </Button>
+      <RemoveCompanyFromFavourites company={company} favouriteCompanies={favouriteCompanies} />
     </>
   )
 }
