@@ -14,14 +14,21 @@ const FavouriteCompanies = () => {
           <Link to="/">Home</Link>
         </Col>
       </Row>
-      <Row>
+      <Row className="mt-3">
+        <Col>
+          <h2>Favourite Companies</h2>
+        </Col>
+      </Row>
+      <Row className="mt-3 g-3">
         {/* exist favourite companies */}
         {favouriteCompanies.list.length > 0 &&
           favouriteCompanies.list.map((company, i) => {
             return (
-              <Col key={`${company._id}-${i}`} xs={12}>
+              <Col key={`${company._id}-${i}`} xs={12} className="border p-2">
                 <p>
-                  <Link to={`/${company.company_name}`}>{company.company_name}</Link>
+                  <Link to={`/${company.company_name}`}>
+                    {company.company_name} - {company.title}
+                  </Link>
                 </p>
               </Col>
             )
