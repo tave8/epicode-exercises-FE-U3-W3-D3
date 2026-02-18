@@ -24,13 +24,7 @@ const Job = ({ company }) => {
       </Row>
       <Row className="mx-0 p-1" style={{ border: "1px solid #00000033", borderRadius: 4 }}>
         <Col className="mt">
-          {/* company is in favourites */}
-          {isCompanyInFavourites({ favouriteCompanies })(company) && <p>in favourites</p>}
-
-          {/* not: company is in favourites */}
-          {!isCompanyInFavourites({ favouriteCompanies })(company) && (
-            <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} showOptions={{}} />
-          )}
+          <FavouriteCompanyActions company={company} favouriteCompanies={favouriteCompanies} showOptions={{ dependsIfCompanyInFavourites: true }} />
         </Col>
       </Row>
     </>
